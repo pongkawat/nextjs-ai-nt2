@@ -1,6 +1,9 @@
 ---
 name: review-architecture-project
 description: review overall project tech stack when user ask 
+license: Pongkawat
+metadata:
+  version: "1.0.2"
 ---
 
 ## What I do
