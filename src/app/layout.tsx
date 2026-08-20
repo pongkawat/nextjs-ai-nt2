@@ -1,15 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Inter,
+  Fira_Code,
+  Prompt,
+} from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-plusjakarta",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+const firaCode = Fira_Code({
   subsets: ["latin"],
+  variable: "--font-firacode",
+});
+
+const prompt = Prompt({
+  weight: ["400", "500", "700"],
+  subsets: ["thai"],
+  variable: "--font-prompt",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,8 +35,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="th"
+      className={cn(
+        "h-full",
+        "antialiased",
+        plusJakartaSans.variable,
+        inter.variable,
+        firaCode.variable,
+        prompt.variable,
+        "font-sans"
+      )}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
