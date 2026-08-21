@@ -16,14 +16,26 @@ async function ApiVersion() {
 // http://localhost:3000/about
 export default function AboutPage() {
   return (
-    <main>
-      <Suspense fallback={ <AppLoading /> }>
-        <ApiVersion />
-      </Suspense>     
-      <hr />
-      <Link href="/" className="underline">
-        Home Page
-      </Link>
+    <main className="flex min-h-screen flex-col items-center justify-center p-8 text-center">
+      <div className="max-w-2xl space-y-6 rounded-2xl bg-card p-12 shadow-xl border">
+        <h1 className="text-4xl font-bold tracking-tight text-primary">About Us</h1>
+        <div className="space-y-4">
+          <Suspense fallback={<AppLoading />}>
+            <ApiVersion />
+          </Suspense>
+          <p className="text-muted-foreground">
+            Welcome to our platform. We are dedicated to providing the best experience for our users.
+          </p>
+        </div>
+        <div className="pt-6">
+          <Link href="/" className="text-sm font-medium text-primary hover:underline">
+            ← Back to Home Page
+          </Link>
+        </div>
+      </div>
+      <footer className="mt-8 text-sm text-muted-foreground">
+        Powered by NT
+      </footer>
     </main>
   );
 }
