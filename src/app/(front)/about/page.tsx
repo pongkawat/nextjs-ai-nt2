@@ -37,5 +37,6 @@ export default function AboutPage() {
         Powered by NT
       </footer>
     </main>
+    </main >
   );
 }
